@@ -22,3 +22,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+month_year = input("Enter a month and a year: ").replace(" ", "").split(",")
+
+def create_calender(*args):
+    # Instantiates class
+    date = datetime.today()
+    rendered_calendar = calendar.TextCalendar()
+    # Gets current year
+    year = date.year
+    if args[0] == '':
+        print("Please enter two numbers. The first number should be a number between 1-12 to represent a month. The second number should be four digits representing a year. A comma must be in-between each number.")
+    elif len(args) == 2:
+        rendered_calendar.prmonth(int(args[1]), int(args[0]))
+    elif len(args) == 1:
+        rendered_calendar.prmonth(year, int(args[0]))
+
+
+create_calender(*month_year)
