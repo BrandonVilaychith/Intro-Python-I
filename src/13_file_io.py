@@ -9,8 +9,9 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 
 # YOUR CODE HERE
-with open("src/foo.txt") as f:
-    f.read()
+with open("foo.txt") as f:
+    for line in f:
+        print(line)
 
 
     
@@ -21,3 +22,8 @@ with open("src/foo.txt") as f:
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+
+with open("bar.txt", "w") as w:
+    w.write('Hello')
+    w.write('Hello')
+    w.write('Hello')
